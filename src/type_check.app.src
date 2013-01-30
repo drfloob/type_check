@@ -1,0 +1,12 @@
+{application, type_check,
+ [
+  {description, "a generic erlang term type checker"},
+  {vsn, "0.1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { type_check_app, []}},
+  {env, []}
+ ]}.
