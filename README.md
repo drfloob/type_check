@@ -29,7 +29,7 @@ of the correct type or crash if not, offers a little peace of mind.
 ## Design
 
 `type_check:validate/2` takes the `Value` to be checked, and a
-declaration of the expected type signature. It returns either
+declaration of the expected `Type` signature. It returns either
 
  * `{ok, all_valid}`, or
  * `{bad_types, [{Value, ExpectedType}]}`
