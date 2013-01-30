@@ -38,8 +38,8 @@ declaration of the expected `Type` signature. It returns either
 ## Limitations
 
 The returned list of `bad_types` can come from anywhere in the given
-Value being checked, so in complex data structures, a bit of a hunt
-for bad values may be required. 
+`Value` being checked, so in complex data structures, a bit of a hunt
+for bad values may be required.
 
 I find this acceptable.
 
