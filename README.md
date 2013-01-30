@@ -32,7 +32,7 @@ of the correct type or crash if not, offers a little peace of mind.
 declaration of the expected `Type` signature. It returns either
 
  * `{ok, all_valid}`, or
- * `{bad_types, [{Value, ExpectedType}]}`
+ * `{bad_types, [{GivenValue, ExpectedType}]}`
 
 
 ## Limitations
