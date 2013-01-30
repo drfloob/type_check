@@ -5,7 +5,7 @@
 
 ```erlang
 {ok, all_valid} = type_check:validate(
-     [<<"hi">>,      1, {42,      <<"the answer">>, [blah]}]
+     [<<"hi">>,      1, {     42, <<"the answer">>, [blah]}]
      , [string, number, {integer,           string, [atom]}])).
 
 {bad_types, [{<<"you">>, number}]} = type_check:validate(
