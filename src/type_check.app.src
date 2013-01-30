@@ -1,6 +1,6 @@
 {application, type_check,
  [
-  {description, "a generic erlang term type checker"},
+  {description, "a generic run-time type checker for erlang terms"},
   {vsn, "0.1"},
   {registered, []},
   {applications, [
