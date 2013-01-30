@@ -9,6 +9,7 @@ singleItem_test_() ->
      , ?_assertEqual({ok, all_valid}, type_check:validate(<<>>, binary))
     ].
 
+
 numbers_test_() ->
     [
      ?_assertEqual({ok, all_valid}, type_check:validate([1], [integer]))
@@ -17,13 +18,33 @@ numbers_test_() ->
      , ?_assertEqual({ok, all_valid}, type_check:validate([1.0], [number]))
      , ?_assertEqual({ok, all_valid}, type_check:validate([99999999999.999], [number]))
 
+     , ?_assertEqual({ok, all_valid}, type_check:validate([1.0, 2], [number, number]))
+
      %% error cases
      , ?_assertEqual({bad_types, [{1.0, integer}]}, type_check:validate([1.0], [integer]))
      , ?_assertEqual({bad_types, [{99999999999.999, integer}]}, type_check:validate([99999999999.999], [integer]))
      , ?_assertEqual({bad_types, [{hork, integer}]}, type_check:validate([hork], [integer]))
+     , ?_assertEqual({bad_types, [{hork, number}, {berf, integer}]}
+		     , type_check:validate([1.0, 2, hork, berf], [number, integer, number, integer]))
     ].
 
-simple_test_() ->
+
+atom_test_() ->
+    [
+     ?_assertEqual({ok, all_valid}, type_check:validate([hork], [atom]))
+     , ?_assertEqual({ok, all_valid}, type_check:validate(hork, atom))
+     , ?_assertEqual({ok, all_valid}, type_check:validate('hork berf', atom))
+
+     %% error cases
+     , ?_assertEqual({bad_types, [{1.0, atom}]}, type_check:validate([1.0], [atom]))
+    ].
+
+%% TODO: list
+%% TODO: each
+%% TODO: eval_true
+%% TODO: tuple
+
+randomStuff_test_() ->
     [
      %% good cases
      ?_assertEqual({ok, all_valid}, type_check:validate([<<"hi">>, 1], [string, number]))
