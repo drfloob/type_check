@@ -39,6 +39,12 @@ atom_test_() ->
      , ?_assertEqual({bad_types, [{1.0, atom}]}, type_check:validate([1.0], [atom]))
     ].
 
+-record(dummy_test, {field1=1, field2= <<"hi">>, field3}).
+record_test_() ->
+    [
+     ?_assertEqual({ok, all_valid}, type_check:validate(#dummy_test{}, {atom, number, string, atom}))
+    ].
+
 %% TODO: list
 %% TODO: each
 %% TODO: eval_true

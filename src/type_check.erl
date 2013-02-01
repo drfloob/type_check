@@ -24,6 +24,7 @@ validate(List, Types)
 validate(Item, Spec) ->
     case validate_one({Item, Spec}) of
 	true -> {ok, all_valid};
+	{ok, all_valid} -> {ok, all_valid};
 	{invalid, Err} -> {bad_types, [Err]}
     end.
 	     
