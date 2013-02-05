@@ -24,6 +24,7 @@ Work I found that came before mine:
 
  * erlang [Match Specs](http://www.erlang.org/doc/apps/erts/match_spec.html) implement almost exactly what I need, but are not immediately usable for matching arbitrary terms.
  * Daniel Luna's [Erlang-type-checker](https://github.com/dLuna/Erlang-type-checker) operates on `-spec`s, which are available in `debug_info` builds (here's a [mailing list thread](http://erlang.org/pipermail/erlang-questions/2011-September/061343.html) about it).
+ * [Neotoma](https://github.com/seancribbs/neotoma) and [Yecc](http://www.erlang.org/doc/man/yecc.html) for parsing strings based on PEGs ([Parsing Expression Grammars](http://en.wikipedia.org/wiki/Parsing_expression_grammar)).
 
 ----
 
