@@ -17,7 +17,7 @@ an internal format.
 This is essentially a compiler from one erlang format to another,
 based on a model-specific grammar. 
 
-Instead of building a parser for a subset of erlang term, I've chosen
+Instead of building a parser for a subset of erlang terms, I've chosen
 to implement basic parsing and compilation as simple erlang functions
 for each model: `parse` and `create`, respectively. It seems the most
 pragmatic solution, but the code isn't terribly succinct, nor is it a
