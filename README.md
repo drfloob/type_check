@@ -1,3 +1,32 @@
+## Why this project died, and what I'm doing instead.
+
+I'm leaving this here to help those who come barking up the same tree.
+
+In building this tool, I realized I was trying to implement a compiler
+(parser & generator) for erlang terms.
+
+The original use case for this project is: when accepting input from
+unknown clients, before performing any resource-intensive tasks, the
+input needs to be checked for well-formedness (e.g. no atoms when
+strings are expected, no lists of integers where utf8 binary strings
+are expected, etc.). If anything is wrong, *all* syntactical problems
+with the input term should be reported (not just the first to
+fail). If the input is well-formed, it would then be translated into
+an internal format.
+
+This is essentially a compiler from one erlang format to another,
+based on a model-specific grammar. 
+
+Instead of implementing such a thing, I've chosen to implement parsing
+and compilation as basic erlang functions for each model.
+
+Work I found that came before mine:
+
+ * erlang [Match Specs](http://www.erlang.org/doc/apps/erts/match_spec.html) implement almost exactly what I need, but are not immediately usable for matching arbitrary terms.
+ * Daniel Luna's [Erlang-type-checker](https://github.com/dLuna/Erlang-type-checker) operates on `-spec`s, which are available in `debug_info` builds (here's a [mailing list thread](http://erlang.org/pipermail/erlang-questions/2011-September/061343.html) about it).
+
+----
+
 `type_check` is a generic run-time type checker for erlang terms.
 
 
@@ -13,7 +42,8 @@
 	[  string,      number, {each, number}]).
 ```
 
-See `test/type_check_tests.erl` for more examples, or better yet, just read the code. There's not much of it!
+See `test/type_check_tests.erl` for more examples, or better yet, just
+read the code. There's not much of it!
 
 
 ## Motivation
