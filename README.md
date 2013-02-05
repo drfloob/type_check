@@ -17,8 +17,13 @@ an internal format.
 This is essentially a compiler from one erlang format to another,
 based on a model-specific grammar. 
 
-Instead I've chosen to implement parsing and compilation as basic erlang
-functions for each model.
+Instead I've chosen to implement parsing and compilation as basic
+erlang functions for each model: `parse` and `create`,
+respectively. It seems the most pragmatic solution, but the code isn't
+terribly succinct, nor is it a solution that lends itself immediately
+to much reuse.
+
+Please ping me if you find a better solution!
 
 ### Work that came before:
 
