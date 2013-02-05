@@ -25,8 +25,8 @@ functions for each model.
  * Erlang [Match Specs](http://www.erlang.org/doc/apps/erts/match_spec.html) implement almost exactly what I need, but (evidently) cannot be used efficiently for matching arbitrary terms.
  * [One way](http://erlang.org/pipermail/erlang-questions/2003-November/010712.html) to use Match Specs for matching arbitrary terms.
  * Daniel Luna's [Erlang-type-checker](https://github.com/dLuna/Erlang-type-checker) operates on `-spec`s, which are available in `debug_info` builds (here's a [mailing list thread](http://erlang.org/pipermail/erlang-questions/2011-September/061343.html) about it).
- * [Neotoma](https://github.com/seancribbs/neotoma) and [Yecc](http://www.erlang.org/doc/man/yecc.html) for parsing strings based on PEGs ([Parsing Expression Grammars](http://en.wikipedia.org/wiki/Parsing_expression_grammar)).
  * [This thread](http://erlang.org/pipermail/erlang-questions/2008-October/039402.html) gets into metaprogramming and a bit about Match Spec reuse.
+ * [Neotoma](https://github.com/seancribbs/neotoma) and [Yecc](http://www.erlang.org/doc/man/yecc.html) for parsing strings based on PEGs ([Parsing Expression Grammars](http://en.wikipedia.org/wiki/Parsing_expression_grammar)).
 
 ----
 
